@@ -1,0 +1,53 @@
+h1 {
+
+    text-align: center;
+    
+}
+
+#calculator {
+
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.display {
+
+    height: 5rem;
+    border: solid 1px;
+    margin: 1rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.main-box {
+
+    height: 60vh;
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    border: solid;
+
+} 
+
+.buttons {
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+}
+
+.buttons > .button {
+
+    width: 6rem;
+    height: 6rem;
+
+}
+
+
+
