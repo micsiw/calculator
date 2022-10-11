@@ -20,23 +20,36 @@ let display = "";
 
 buttonMultiply.addEventListener("click", () => {
 
-    display += "* "
+    const arrayFromDisplay = display.split(" ");
+
+    if (arrayFromDisplay.length === 3) {
+        evaluate();
+        display += " * "
+    } else {
+        display += " * "
+    }
+
     displayScreen.textContent = display;
 
 })
 
 buttonDivide.addEventListener("click", () => {
 
-    display += "/ "
+    const arrayFromDisplay = display.split(" ");
+
+    if (arrayFromDisplay.length === 3) {
+        evaluate();
+        display += " / "
+    } else {
+        display += " / "
+    }
+
     displayScreen.textContent = display;
 
 })
 
-buttonEquals.addEventListener("click", () => {
+buttonEquals.addEventListener("click", (evaluate))
 
-    //------
-
-})
 
 buttonClear.addEventListener("click", () => {
 
@@ -47,84 +60,100 @@ buttonClear.addEventListener("click", () => {
 
 buttonSubtract.addEventListener("click", () => {
 
-    display += "- "
+    const arrayFromDisplay = display.split(" ");
+
+    if (arrayFromDisplay.length === 3) {
+        evaluate();
+        display += " - "
+    } else {
+        display += " - "
+    }
+
     displayScreen.textContent = display;
 
 })
 
 buttonAdd.addEventListener("click", () => {
 
-    display += "+ "
+    const arrayFromDisplay = display.split(" ");
+
+    if (arrayFromDisplay.length === 3) {
+        evaluate();
+        display += " + "
+    } else {
+        display += " + "
+    }
+
     displayScreen.textContent = display;
 
 })
 
 button_1.addEventListener("click", () => {
 
-    display += "1 ";
+    display += "1";
     displayScreen.textContent = display;
 
 })
 
 button_2.addEventListener("click", () => {
 
-    display += "2 ";
+    display += "2";
     displayScreen.textContent = display;
 
 })
 
 button_3.addEventListener("click", () => {
 
-    display += "3 ";
+    display += "3";
     displayScreen.textContent = display;
 
 })
 
 button_4.addEventListener("click", () => {
 
-    display += "4 ";
+    display += "4";
     displayScreen.textContent = display;
 
 })
 
 button_5.addEventListener("click", () => {
 
-    display += "5 ";
+    display += "5";
     displayScreen.textContent = display;
 
 })
 
 button_6.addEventListener("click", () => {
 
-    display += "6 ";
+    display += "6";
     displayScreen.textContent = display;
 
 })
 
 button_7.addEventListener("click", () => {
 
-    display += "7 ";
+    display += "7";
     displayScreen.textContent = display;
 
 })
 
 button_8.addEventListener("click", () => {
 
-    display += "8 ";
+    display += "8";
     displayScreen.textContent = display;
 
 })
 
 button_9.addEventListener("click", () => {
 
-    display += "9 ";
+    display += "9";
     displayScreen.textContent = display;
 
 })
 
 button_0.addEventListener("click", () => {
 
-    display += "0 ";
+    display += "0";
     displayScreen.textContent = display;
 
 })
@@ -132,25 +161,35 @@ button_0.addEventListener("click", () => {
 
 function add (a, b) {
 
-    return a + b
+    display = (a + b).toString();
+    displayScreen.textContent = display
 
 }
 
 function subtract (a, b) {
 
-    return a - b
+    display = (a - b).toString();
+    displayScreen.textContent = display
 
 }
 
 function multiply (a, b) {
 
-    return a * b
+    display = (a * b).toString();
+    displayScreen.textContent = display
 
 }
 
 function divide (a, b) {
 
-    return a / b
+    if (b === 0) {
+        alert("You can't divide by zero.");
+        display = ""
+    } else {
+        display = (a / b).toString();
+    }
+
+    displayScreen.textContent = display
 
 }
 
@@ -158,19 +197,31 @@ function operate (a, operator, b) {
 
     switch (operator) {
         case "+":
-            return add (a, b);
+            add (a, b);
             break;
         case "-":
-            return subtract (a, b);
+            subtract (a, b);
             break;
         case "*":
-            return multiply (a, b);
+            multiply (a, b);
             break;
         case "/":
-            return divide (a, b)
+            divide (a, b)
             break;
-        default: "woops";
+        default: alert("woops");
     }
+
+}
+
+function evaluate () {
+
+    const arrayFromDisplay = display.split(" ");
+    
+    let a = parseFloat(arrayFromDisplay[0])
+    let operator = arrayFromDisplay[1]
+    let b = parseFloat(arrayFromDisplay[2])
+
+    operate(a, operator, b)
 
 }
 
