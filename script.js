@@ -25,6 +25,8 @@ buttonMultiply.addEventListener("click", () => {
     if (arrayFromDisplay.length === 3) {
         evaluate();
         display += " * "
+    } else if (display === "") {
+        display = ""
     } else {
         display += " * "
     }
@@ -40,6 +42,8 @@ buttonDivide.addEventListener("click", () => {
     if (arrayFromDisplay.length === 3) {
         evaluate();
         display += " / "
+    } else if (display === "") {
+        display = ""
     } else {
         display += " / "
     }
@@ -65,6 +69,8 @@ buttonSubtract.addEventListener("click", () => {
     if (arrayFromDisplay.length === 3) {
         evaluate();
         display += " - "
+    } else if (display === "") {
+        display = ""
     } else {
         display += " - "
     }
@@ -80,6 +86,8 @@ buttonAdd.addEventListener("click", () => {
     if (arrayFromDisplay.length === 3) {
         evaluate();
         display += " + "
+    } else if (display === "") {
+        display = ""
     } else {
         display += " + "
     }
@@ -184,7 +192,7 @@ function divide (a, b) {
 
     if (b === 0) {
         alert("You can't divide by zero.");
-        display = ""
+        display = "";
     } else {
         display = (a / b).toString();
     }
@@ -208,7 +216,7 @@ function operate (a, operator, b) {
         case "/":
             divide (a, b)
             break;
-        default: alert("woops");
+        default: break;
     }
 
 }
@@ -221,8 +229,11 @@ function evaluate () {
     let operator = arrayFromDisplay[1]
     let b = parseFloat(arrayFromDisplay[2])
 
-    operate(a, operator, b)
-
+    if (isNaN(b)) {
+        arrayFromDisplay.splice(2)
+        display = display.slice(0, -3);
+    } else {
+        operate(a, operator, b)
+    }
+    
 }
-
-
