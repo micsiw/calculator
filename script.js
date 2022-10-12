@@ -5,6 +5,8 @@ const buttonEquals = document.getElementById("equals");
 const buttonClear = document.getElementById("clear");
 const buttonSubtract = document.getElementById("subtract");
 const buttonAdd = document.getElementById("add");
+const buttonDecimal = document.getElementById("decimal");
+const buttonBackspace = document.getElementById("backspace");
 const button_1 = document.getElementById("1");
 const button_2 = document.getElementById("2");
 const button_3 = document.getElementById("3");
@@ -33,7 +35,7 @@ buttonMultiply.addEventListener("click", () => {
 
     displayScreen.textContent = display;
 
-})
+});
 
 buttonDivide.addEventListener("click", () => {
 
@@ -50,7 +52,7 @@ buttonDivide.addEventListener("click", () => {
 
     displayScreen.textContent = display;
 
-})
+});
 
 buttonEquals.addEventListener("click", (evaluate))
 
@@ -60,7 +62,7 @@ buttonClear.addEventListener("click", () => {
     display = ""
     displayScreen.textContent = display;
 
-})
+});
 
 buttonSubtract.addEventListener("click", () => {
 
@@ -77,7 +79,7 @@ buttonSubtract.addEventListener("click", () => {
 
     displayScreen.textContent = display;
 
-})
+});
 
 buttonAdd.addEventListener("click", () => {
 
@@ -94,96 +96,133 @@ buttonAdd.addEventListener("click", () => {
 
     displayScreen.textContent = display;
 
-})
+});
+
+buttonDecimal.addEventListener("click", () => {
+
+    const arrayFromDisplay = display.split("");
+    const positionOfOperator = arrayFromDisplay.indexOf(" ")
+    const firstNumber = arrayFromDisplay.slice(0, positionOfOperator)
+    const secondNumber = arrayFromDisplay.slice(positionOfOperator + 3)
+
+    if (firstNumber.includes(".")) {
+        if (secondNumber.includes(".")) {
+            return
+        } else {
+            display += ".";
+        }
+    } else if (arrayFromDisplay[arrayFromDisplay.length - 1] === " " || display === "") {
+        display += "0."
+    } else {
+        display += "."
+    }
+
+    displayScreen.textContent = display;
+
+});
+
+buttonBackspace.addEventListener("click", () => {
+
+    let deleted = display.slice(-1);
+    
+    if (deleted === " ") {
+        display = display.slice(0, -3)
+    } else {
+        display = display.slice(0, -1)
+    }
+
+    displayScreen.textContent = display;
+
+});
 
 button_1.addEventListener("click", () => {
 
     display += "1";
     displayScreen.textContent = display;
 
-})
+});
 
 button_2.addEventListener("click", () => {
 
     display += "2";
     displayScreen.textContent = display;
 
-})
+});
 
 button_3.addEventListener("click", () => {
 
     display += "3";
     displayScreen.textContent = display;
 
-})
+});
 
 button_4.addEventListener("click", () => {
 
     display += "4";
     displayScreen.textContent = display;
 
-})
+});
 
 button_5.addEventListener("click", () => {
 
     display += "5";
     displayScreen.textContent = display;
 
-})
+});
 
 button_6.addEventListener("click", () => {
 
     display += "6";
     displayScreen.textContent = display;
 
-})
+});
 
 button_7.addEventListener("click", () => {
 
     display += "7";
     displayScreen.textContent = display;
 
-})
+});
 
 button_8.addEventListener("click", () => {
 
     display += "8";
     displayScreen.textContent = display;
 
-})
+});
 
 button_9.addEventListener("click", () => {
 
     display += "9";
     displayScreen.textContent = display;
 
-})
+});
 
 button_0.addEventListener("click", () => {
 
     display += "0";
     displayScreen.textContent = display;
 
-})
+});
 
 
 function add (a, b) {
 
-    display = (a + b).toString();
+    display = round((a + b), 8).toString();
     displayScreen.textContent = display
 
 }
 
 function subtract (a, b) {
 
-    display = (a - b).toString();
+    display = round((a - b), 8).toString();
     displayScreen.textContent = display
 
 }
 
 function multiply (a, b) {
 
-    display = (a * b).toString();
+    display = round((a * b), 8).toString();
     displayScreen.textContent = display
 
 }
@@ -192,9 +231,9 @@ function divide (a, b) {
 
     if (b === 0) {
         alert("You can't divide by zero.");
-        display = "";
+        window.location.reload();
     } else {
-        display = (a / b).toString();
+        display = round((a / b), 8).toString();
     }
 
     displayScreen.textContent = display
@@ -237,3 +276,9 @@ function evaluate () {
     }
     
 }
+
+/* decimals = how many decimal places to return */
+
+function round(value, decimals) {
+    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+  }
