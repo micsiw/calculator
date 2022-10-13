@@ -7,16 +7,16 @@ const buttonSubtract = document.getElementById("subtract");
 const buttonAdd = document.getElementById("add");
 const buttonDecimal = document.getElementById("decimal");
 const buttonBackspace = document.getElementById("backspace");
-const button_1 = document.getElementById("1");
-const button_2 = document.getElementById("2");
-const button_3 = document.getElementById("3");
-const button_4 = document.getElementById("4");
-const button_5 = document.getElementById("5");
-const button_6 = document.getElementById("6");
-const button_7 = document.getElementById("7");
-const button_8 = document.getElementById("8");
-const button_9 = document.getElementById("9");
-const button_0 = document.getElementById("0");
+const button_1 = document.getElementById("b1");
+const button_2 = document.getElementById("b2");
+const button_3 = document.getElementById("b3");
+const button_4 = document.getElementById("b4");
+const button_5 = document.getElementById("b5");
+const button_6 = document.getElementById("b6");
+const button_7 = document.getElementById("b7");
+const button_8 = document.getElementById("b8");
+const button_9 = document.getElementById("b9");
+const button_0 = document.getElementById("b0");
 
 let display = "";
 
@@ -105,14 +105,14 @@ buttonDecimal.addEventListener("click", () => {
     const firstNumber = arrayFromDisplay.slice(0, positionOfOperator)
     const secondNumber = arrayFromDisplay.slice(positionOfOperator + 3)
 
-    if (firstNumber.includes(".")) {
-        if (secondNumber.includes(".")) {
-            return
-        } else {
-            display += ".";
-        }
-    } else if (arrayFromDisplay[arrayFromDisplay.length - 1] === " " || display === "") {
+    if (arrayFromDisplay[arrayFromDisplay.length - 1] === " " || display === "") {
         display += "0."
+    } else if (firstNumber.includes(".")) {
+        if (secondNumber.includes(".")) {
+        return
+    } else {
+        display += ".";
+    }
     } else {
         display += "."
     }

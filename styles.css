@@ -35,17 +35,17 @@ h1 {
 
 .buttons {
 
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex-grow: 1;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 
 }
 
-.buttons > .button {
+#b0 {
 
-    width: 6rem;
-    height: 6rem;
+    grid-column-start: 1;
+    grid-column-end: 3;
 
 }
 
