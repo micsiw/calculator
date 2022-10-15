@@ -13,25 +13,30 @@ h1 {
 
 }
 
-.display {
-
-    height: 5rem;
-    border: solid 1px;
-    margin: 1rem;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
 .main-box {
 
     height: 60vh;
     width: 40vh;
     display: flex;
     flex-direction: column;
-    border: solid;
+    border: solid 3px;
+    border-radius: 8px;
 
 } 
+
+.display {
+
+    font-size: 4vh;
+    height: 100px;
+    margin: 15px;
+    margin-bottom: 20px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border: solid 1px;
+    border-radius: 5px;
+}
 
 .buttons {
 
@@ -39,6 +44,12 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+button {
+
+    font-size: 4vh;
 
 }
 
