@@ -7,6 +7,7 @@ const buttonSubtract = document.getElementById("subtract");
 const buttonAdd = document.getElementById("add");
 const buttonDecimal = document.getElementById("decimal");
 const buttonBackspace = document.getElementById("backspace");
+const buttonNegative = document.getElementById("negative");
 const button_1 = document.getElementById("b1");
 const button_2 = document.getElementById("b2");
 const button_3 = document.getElementById("b3");
@@ -100,19 +101,15 @@ buttonAdd.addEventListener("click", () => {
 
 buttonDecimal.addEventListener("click", () => {
 
-    const arrayFromDisplay = display.split("");
-    const positionOfOperator = arrayFromDisplay.indexOf(" ")
-    const firstNumber = arrayFromDisplay.slice(0, positionOfOperator)
-    const secondNumber = arrayFromDisplay.slice(positionOfOperator + 3)
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const operator = arrayFromDisplay[1]
+    const secondNumber = arrayFromDisplay[2]
 
-    if (arrayFromDisplay[arrayFromDisplay.length - 1] === " " || display === "") {
+    if (display === "" || operator !== undefined && secondNumber === "") {
         display += "0."
-    } else if (firstNumber.includes(".")) {
-        if (secondNumber.includes(".")) {
+    } else if (firstNumber.includes(".") && secondNumber === undefined || firstNumber.includes(".") && secondNumber.includes(".")) {
         return
-    } else {
-        display += ".";
-    }
     } else {
         display += "."
     }
@@ -132,6 +129,25 @@ buttonBackspace.addEventListener("click", () => {
     }
 
     displayScreen.textContent = display;
+
+});
+
+buttonNegative.addEventListener("click", () => {
+
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+    const operator = arrayFromDisplay[1]
+
+    if (firstNumber.includes("-") && secondNumber === undefined || firstNumber.includes("-") && secondNumber.includes("-")) {
+        return
+    } else if (!firstNumber.includes("-") && secondNumber === undefined) {
+        display = "-" + display
+        displayScreen.textContent = display;
+    } else if (!secondNumber.includes("-")) {
+        display = firstNumber + " " + operator + " " + "-" + secondNumber
+        displayScreen.textContent = firstNumber + " " + operator + " " + "(-" + secondNumber + ")";
+    }
 
 });
 
