@@ -7,7 +7,9 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Orbitron:wght@400;800&display=swap" rel="stylesheet">    <title>Calculator</title>
 </head>
 <body>
     <h1>CALCULATOR</h1>
@@ -15,27 +17,32 @@
         <div class="main-box">
             <div class="display"></div>
             <div class="buttons">
-                <button class="button clear" id="clear">C</button>
-                <button class="button negative" id="negative">+/-</button>
-                <button class="button backspace" id="backspace">&#8592;</button>
-                <button class="button divide" id="divide">/</button>
-                <button class="button 7" id="b7">7</button>
-                <button class="button 8" id="b8">8</button>
-                <button class="button 9" id="b9">9</button>
-                <button class="button multiply" id="multiply">*</button>
-                <button class="button 4" id="b4">4</button>
-                <button class="button 5" id="b5">5</button>
-                <button class="button 6" id="b6">6</button>
-                <button class="button subtract" id="subtract">-</button>
-                <button class="button 1" id="b1">1</button>
-                <button class="button 2" id="b2">2</button>
-                <button class="button 3" id="b3">3</button>
-                <button class="button add" id="add">+</button>
-                <button class="button 0" id="b0">0</button>
-                <button class="button decimal" id="decimal">.</button>
-                <button class="button equals" id="equals">=</button>
+                <button class="button function" id="clear">C</button>
+                <button class="button function" id="negative">+/-</button>
+                <button class="button function" id="backspace"><span id="backspace-text">&#8592;</span></button>
+                <button class="button operator" id="divide">/</button>
+                <button class="button number" id="b7">7</button>
+                <button class="button number" id="b8">8</button>
+                <button class="button number" id="b9">9</button>
+                <button class="button operator" id="multiply">*</button>
+                <button class="button number" id="b4">4</button>
+                <button class="button number" id="b5">5</button>
+                <button class="button number" id="b6">6</button>
+                <button class="button operator" id="subtract">-</button>
+                <button class="button number" id="b1">1</button>
+                <button class="button number" id="b2">2</button>
+                <button class="button number" id="b3">3</button>
+                <button class="button operator" id="add">+</button>
+                <button class="button number" id="b0">0</button>
+                <button class="button number" id="decimal">.</button>
+                <button class="button operator" id="equals">=</button>
             </div>
         </div>
+    </div>
+    <div class="footer"><p>Created by Michal Siwanowicz</p>
+        <a href="https://github.com/micsiw">
+            <img src="GitHub-Mark-32px.png" alt="github logo" id="footer-logo">
+        </a>
     </div>
 </body>
 </html>

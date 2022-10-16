@@ -153,71 +153,151 @@ buttonNegative.addEventListener("click", () => {
 
 button_1.addEventListener("click", () => {
 
-    display += "1";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "1";
+        displayScreen.textContent = display;
+    }
 
 });
 
 button_2.addEventListener("click", () => {
 
-    display += "2";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "2";
+        displayScreen.textContent = display;
+    }
 
 });
 
 button_3.addEventListener("click", () => {
 
-    display += "3";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "3";
+        displayScreen.textContent = display;
+    }
 
 });
 
 button_4.addEventListener("click", () => {
 
-    display += "4";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "4";
+        displayScreen.textContent = display;
+    }
 
 });
 
 button_5.addEventListener("click", () => {
 
-    display += "5";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "5";
+        displayScreen.textContent = display;
+    }
 
 });
 
 button_6.addEventListener("click", () => {
 
-    display += "6";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "6";
+        displayScreen.textContent = display;
+    }
 
 });
 
 button_7.addEventListener("click", () => {
 
-    display += "7";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "7";
+        displayScreen.textContent = display;
+    }
 
 });
 
 button_8.addEventListener("click", () => {
 
-    display += "8";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "8";
+        displayScreen.textContent = display;
+    }
 
 });
 
 button_9.addEventListener("click", () => {
 
-    display += "9";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "9";
+        displayScreen.textContent = display;
+    }
 
 });
 
 button_0.addEventListener("click", () => {
 
-    display += "0";
-    displayScreen.textContent = display;
+    const arrayFromDisplay = display.split(" ");
+    const firstNumber = arrayFromDisplay[0]
+    const secondNumber = arrayFromDisplay[2]
+
+    if (firstNumber.length > 8 && secondNumber === undefined || secondNumber !== undefined && secondNumber.length > 8) {
+        return
+    } else {
+        display += "0";
+        displayScreen.textContent = display;
+    }
 
 });
 
